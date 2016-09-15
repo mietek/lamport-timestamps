@@ -129,7 +129,7 @@ asym⊳ : ∀ {Pᵢ Pⱼ Tᵢ Tⱼ} {a : Event Pᵢ Tᵢ} {b : Event Pⱼ Tⱼ} 
 asym⊳ a⊳b b⊳a = irrefl⊳ (trans⊳ a⊳b b⊳a)
 
 
--- _⇒_ is a decidable decidable strict total order on events across all processes.
+-- _⇒_ is a decidable strict total order on events across all processes.
 
 data _⇒_ : ∀ {Pᵢ Pⱼ Tᵢ Tⱼ} → Event Pᵢ Tᵢ → Event Pⱼ Tⱼ → Set where
   diff⇒ : ∀ {Pᵢ Pⱼ Tᵢ Tⱼ} {a : Event Pᵢ Tᵢ} {b : Event Pⱼ Tⱼ} →
