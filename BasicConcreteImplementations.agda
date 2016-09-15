@@ -56,8 +56,8 @@ data BasicEvent : Proc → Time → Set where
 instance
   ⟨E⟩ : IsEvent
   ⟨E⟩ = record
-          { Event  = BasicEvent
-          ; isSend = λ {Cᵢ} m a → a ≡ send {Cᵢ} m
-          ; isRecv = λ {Cⱼ} m a → a ≡ recv {Cⱼ} m
-          ; absurd = λ { {{refl}} (refl , ()) }
+          { Event   = BasicEvent
+          ; isSendₑ = λ {Cᵢ} m a → a ≡ send {Cᵢ} m
+          ; isRecvₑ = λ {Cⱼ} m a → a ≡ recv {Cⱼ} m
+          ; absurdₑ = λ { {{refl}} (refl , ()) }
           }

@@ -52,16 +52,16 @@ open IsMsg {{…}} public
 
 record IsEvent {{_ : IsProc}} {{_ : IsTime}} {{_ : IsMsg}} : Set₁ where
   field
-    Event  : Proc → Time → Set
+    Event   : Proc → Time → Set
 
-    isSend : ∀ {Cᵢ Pᵢ Pⱼ Tₘ} {{_ : Tₘ ≡ sucₜ Cᵢ}} →
-             Msg Pᵢ Pⱼ Tₘ → Event Pᵢ Tₘ → Set
+    isSendₑ : ∀ {Cᵢ Pᵢ Pⱼ Tₘ} {{_ : Tₘ ≡ sucₜ Cᵢ}} →
+              Msg Pᵢ Pⱼ Tₘ → Event Pᵢ Tₘ → Set
 
-    isRecv : ∀ {Cⱼ Pᵢ Pⱼ Tₘ Tⱼ} {{_ : Tⱼ ≡ sucₜ (Tₘ ⊔ₜ Cⱼ)}} →
-             Msg Pᵢ Pⱼ Tₘ → Event Pⱼ Tⱼ → Set
+    isRecvₑ : ∀ {Cⱼ Pᵢ Pⱼ Tₘ Tⱼ} {{_ : Tⱼ ≡ sucₜ (Tₘ ⊔ₜ Cⱼ)}} →
+              Msg Pᵢ Pⱼ Tₘ → Event Pⱼ Tⱼ → Set
 
-    absurd : ∀ {Cᵢ Cⱼ P Tₘ} {m : Msg P P Tₘ} {a : Event P Tₘ} →
-             {{_ : Tₘ ≡ sucₜ Cᵢ}} {{_ : Tₘ ≡ sucₜ (Tₘ ⊔ₜ Cⱼ)}} →
-             ¬ (isSend {Cᵢ} m a × isRecv {Cⱼ} m a)
+    absurdₑ : ∀ {Cᵢ Cⱼ P T} {m : Msg P P T} {a : Event P T} →
+              {{_ : T ≡ sucₜ Cᵢ}} {{_ : T ≡ sucₜ (T ⊔ₜ Cⱼ)}} →
+              ¬ (isSendₑ {Cᵢ} m a × isRecvₑ {Cⱼ} m a)
 
 open IsEvent {{…}} public

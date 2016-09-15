@@ -102,7 +102,7 @@ data _⊳_ : ∀ {Pᵢ Pⱼ Tᵢ Tⱼ} → Event Pᵢ Tᵢ → Event Pⱼ Tⱼ �
 
   pass⊳  : ∀ {Cᵢ Cⱼ Pᵢ Pⱼ Tₘ Tⱼ} {{_ : Tₘ ≡ sucₜ Cᵢ}} {{_ : Tⱼ ≡ sucₜ (Tₘ ⊔ₜ Cⱼ)}} →
            {m : Msg Pᵢ Pⱼ Tₘ} {a : Event Pᵢ Tₘ} {b : Event Pⱼ Tⱼ} →
-           isSend {Cᵢ} m a → isRecv {Cⱼ} m b → a ⊳ b
+           isSendₑ {Cᵢ} m a → isRecvₑ {Cⱼ} m b → a ⊳ b
 
   trans⊳ : ∀ {Pᵢ Pⱼ Pₖ Tᵢ Tⱼ Tₖ} {a : Event Pᵢ Tᵢ} {b : Event Pⱼ Tⱼ} {c : Event Pₖ Tₖ} →
            a ⊳ b → b ⊳ c → a ⊳ c
@@ -119,7 +119,7 @@ clock⊳ (trans⊳ a⊳b b⊳c)                        = trans<ₜ (clock⊳ a�
 
 irrefl⊳ : ∀ {P T} {a : Event P T} → a ⋫ a
 irrefl⊳ (lift⊳ {a = a} a<a) = a<a ↯ irrefl<ₑ {a = a}
-irrefl⊳ (pass⊳ x y)         = (x , y) ↯ absurd
+irrefl⊳ (pass⊳ x y)         = (x , y) ↯ absurdₑ
 irrefl⊳ (trans⊳ {Tᵢ = Tᵢ} {Tⱼ} a⊳b b⊳a) with tri<ₜ Tᵢ Tⱼ
 irrefl⊳ (trans⊳ a⊳b b⊳a) | τ₍ Tᵢ<Tⱼ Tᵢ≢Tⱼ Tⱼ≮Tᵢ = clock⊳ b⊳a ↯ Tⱼ≮Tᵢ
 irrefl⊳ (trans⊳ a⊳b b⊳a) | τ₌ Tᵢ≮Tⱼ Tᵢ≡Tⱼ Tⱼ≮Tᵢ = clock⊳ a⊳b ↯ Tᵢ≮Tⱼ
