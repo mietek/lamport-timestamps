@@ -3,7 +3,7 @@ open import AbstractInterfaces public
 module OrdersAndEqualities {{_ : IsProc}} {{_ : IsTime}} {{_ : IsMsg}} {{_ : IsEvent}} where
 
 
--- _≡ₑ_ is a decidable equality on the timestamps of events within one process.
+-- _≡ₑ_ is a decidable equality on events within one process.
 
 data _≡ₑ_ : ∀ {P T T′} → Event P T → Event P T′ → Set where
   refl≡ₑ : ∀ {P T} {a b : Event P T} →
@@ -27,7 +27,7 @@ a ≡ₑ? b | yes T≡T′ = yes (≡→≡ₑ T≡T′)
 a ≡ₑ? b | no  T≢T′ = no (≢→≢ₑ T≢T′)
 
 
--- _≅ₑ_ is a decidable equality on the timestamps of events across all processes.
+-- _≅ₑ_ is a decidable equality on events across all processes.
 
 data _≅ₑ_ : ∀ {Pᵢ Pⱼ Tᵢ Tⱼ} → Event Pᵢ Tᵢ → Event Pⱼ Tⱼ → Set where
   refl≅ₑ : ∀ {P T} {a : Event P T} {b : Event P T} →
@@ -61,7 +61,7 @@ a ≅ₑ? b | yes refl  | no  a≢b = no (≢ₑ→≇ₑ a≢b)
 a ≅ₑ? b | no  Pᵢ≢Pⱼ = no (≢ₚ→≇ₑ Pᵢ≢Pⱼ)
 
 
--- _<ₑ_ is a decidable strict total order on the timestamps of events within one process.
+-- _<ₑ_ is a decidable strict total order on events within one process.
 
 _<ₑ_ : ∀ {T T′ P} → Event P T → Event P T′ → Set
 _<ₑ_ {T} {T′} a b = T <ₜ T′
