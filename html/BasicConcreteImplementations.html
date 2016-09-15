@@ -1,0 +1,974 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >BasicConcreteImplementations</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="BasicConcreteImplementations.html#1" class="Module"
+      >BasicConcreteImplementations</a
+      ><a name="36"
+      > </a
+      ><a name="37" class="Keyword"
+      >where</a
+      ><a name="42"
+      >
+
+</a
+      ><a name="44" class="Keyword"
+      >open</a
+      ><a name="48"
+      > </a
+      ><a name="49" class="Keyword"
+      >import</a
+      ><a name="55"
+      > </a
+      ><a name="56" href="AbstractInterfaces.html#1" class="Module"
+      >AbstractInterfaces</a
+      ><a name="74"
+      > </a
+      ><a name="75" class="Keyword"
+      >public</a
+      ><a name="81"
+      >
+
+
+</a
+      ><a name="84" class="Comment"
+      >-- Process identifiers.</a
+      ><a name="107"
+      >
+
+</a
+      ><a name="109" class="Keyword"
+      >instance</a
+      ><a name="117"
+      >
+  </a
+      ><a name="120" href="BasicConcreteImplementations.html#120" class="Function"
+      >&#10216;P&#10217;</a
+      ><a name="123"
+      > </a
+      ><a name="124" class="Symbol"
+      >:</a
+      ><a name="125"
+      > </a
+      ><a name="126" href="AbstractInterfaces.html#95" class="Record"
+      >IsProc</a
+      ><a name="132"
+      >
+  </a
+      ><a name="135" href="BasicConcreteImplementations.html#120" class="Function"
+      >&#10216;P&#10217;</a
+      ><a name="138"
+      > </a
+      ><a name="139" class="Symbol"
+      >=</a
+      ><a name="140"
+      > </a
+      ><a name="141" class="Keyword"
+      >record</a
+      ><a name="147"
+      >
+          </a
+      ><a name="158" class="Symbol"
+      >{</a
+      ><a name="159"
+      > </a
+      ><a name="160" class="Field"
+      >Proc</a
+      ><a name="164"
+      >    </a
+      ><a name="168" class="Symbol"
+      >=</a
+      ><a name="169"
+      > </a
+      ><a name="170" href="Agda.Builtin.Nat.html#69" class="Datatype"
+      >&#8469;</a
+      ><a name="171"
+      >
+          </a
+      ><a name="182" class="Symbol"
+      >;</a
+      ><a name="183"
+      > </a
+      ><a name="184" class="Field Operator"
+      >_&#8801;&#8346;?_</a
+      ><a name="189"
+      >   </a
+      ><a name="192" class="Symbol"
+      >=</a
+      ><a name="193"
+      > </a
+      ><a name="194" href="Data.Nat.Base.html#3199" class="Function Operator"
+      >_&#8801;?_</a
+      ><a name="198"
+      >
+          </a
+      ><a name="209" class="Symbol"
+      >;</a
+      ><a name="210"
+      > </a
+      ><a name="211" class="Field Operator"
+      >_&lt;&#8346;_</a
+      ><a name="215"
+      >    </a
+      ><a name="219" class="Symbol"
+      >=</a
+      ><a name="220"
+      > </a
+      ><a name="221" href="Data.Nat.Base.html#1469" class="Function Operator"
+      >_&lt;_</a
+      ><a name="224"
+      >
+          </a
+      ><a name="235" class="Symbol"
+      >;</a
+      ><a name="236"
+      > </a
+      ><a name="237" class="Field"
+      >trans&lt;&#8346;</a
+      ><a name="244"
+      > </a
+      ><a name="245" class="Symbol"
+      >=</a
+      ><a name="246"
+      > </a
+      ><a name="247" href="Prelude.html#5877" class="Function"
+      >trans&lt;</a
+      ><a name="253"
+      >
+          </a
+      ><a name="264" class="Symbol"
+      >;</a
+      ><a name="265"
+      > </a
+      ><a name="266" class="Field"
+      >tri&lt;&#8346;</a
+      ><a name="271"
+      >   </a
+      ><a name="274" class="Symbol"
+      >=</a
+      ><a name="275"
+      > </a
+      ><a name="276" href="Prelude.html#5942" class="Function"
+      >tri&lt;</a
+      ><a name="280"
+      >
+          </a
+      ><a name="291" class="Symbol"
+      >}</a
+      ><a name="292"
+      >
+
+
+</a
+      ><a name="295" class="Comment"
+      >-- Process clocks, message timestamps, and event timestamps.</a
+      ><a name="355"
+      >
+
+</a
+      ><a name="357" class="Keyword"
+      >instance</a
+      ><a name="365"
+      >
+  </a
+      ><a name="368" href="BasicConcreteImplementations.html#368" class="Function"
+      >&#10216;T&#10217;</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Symbol"
+      >:</a
+      ><a name="373"
+      > </a
+      ><a name="374" href="AbstractInterfaces.html#429" class="Record"
+      >IsTime</a
+      ><a name="380"
+      >
+  </a
+      ><a name="383" href="BasicConcreteImplementations.html#368" class="Function"
+      >&#10216;T&#10217;</a
+      ><a name="386"
+      > </a
+      ><a name="387" class="Symbol"
+      >=</a
+      ><a name="388"
+      > </a
+      ><a name="389" class="Keyword"
+      >record</a
+      ><a name="395"
+      >
+          </a
+      ><a name="406" class="Symbol"
+      >{</a
+      ><a name="407"
+      > </a
+      ><a name="408" class="Field"
+      >Time</a
+      ><a name="412"
+      >      </a
+      ><a name="418" class="Symbol"
+      >=</a
+      ><a name="419"
+      > </a
+      ><a name="420" href="Agda.Builtin.Nat.html#69" class="Datatype"
+      >&#8469;</a
+      ><a name="421"
+      >
+          </a
+      ><a name="432" class="Symbol"
+      >;</a
+      ><a name="433"
+      > </a
+      ><a name="434" class="Field Operator"
+      >_&#8801;&#8348;?_</a
+      ><a name="439"
+      >     </a
+      ><a name="444" class="Symbol"
+      >=</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="Data.Nat.Base.html#3199" class="Function Operator"
+      >_&#8801;?_</a
+      ><a name="450"
+      >
+          </a
+      ><a name="461" class="Symbol"
+      >;</a
+      ><a name="462"
+      > </a
+      ><a name="463" class="Field Operator"
+      >_&lt;&#8348;_</a
+      ><a name="467"
+      >      </a
+      ><a name="473" class="Symbol"
+      >=</a
+      ><a name="474"
+      > </a
+      ><a name="475" href="Data.Nat.Base.html#1469" class="Function Operator"
+      >_&lt;_</a
+      ><a name="478"
+      >
+          </a
+      ><a name="489" class="Symbol"
+      >;</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Field"
+      >trans&lt;&#8348;</a
+      ><a name="498"
+      >   </a
+      ><a name="501" class="Symbol"
+      >=</a
+      ><a name="502"
+      > </a
+      ><a name="503" href="Prelude.html#5877" class="Function"
+      >trans&lt;</a
+      ><a name="509"
+      >
+          </a
+      ><a name="520" class="Symbol"
+      >;</a
+      ><a name="521"
+      > </a
+      ><a name="522" class="Field"
+      >tri&lt;&#8348;</a
+      ><a name="527"
+      >     </a
+      ><a name="532" class="Symbol"
+      >=</a
+      ><a name="533"
+      > </a
+      ><a name="534" href="Prelude.html#5942" class="Function"
+      >tri&lt;</a
+      ><a name="538"
+      >
+          </a
+      ><a name="549" class="Symbol"
+      >;</a
+      ><a name="550"
+      > </a
+      ><a name="551" class="Field"
+      >irrefl&lt;&#8348;</a
+      ><a name="559"
+      >  </a
+      ><a name="561" class="Symbol"
+      >=</a
+      ><a name="562"
+      > </a
+      ><a name="563" href="Prelude.html#6418" class="Function"
+      >irrefl&lt;</a
+      ><a name="570"
+      >
+          </a
+      ><a name="581" class="Symbol"
+      >;</a
+      ><a name="582"
+      > </a
+      ><a name="583" class="Field"
+      >suc&#8348;</a
+      ><a name="587"
+      >      </a
+      ><a name="593" class="Symbol"
+      >=</a
+      ><a name="594"
+      > </a
+      ><a name="595" href="Agda.Builtin.Nat.html#100" class="InductiveConstructor"
+      >suc</a
+      ><a name="598"
+      >
+          </a
+      ><a name="609" class="Symbol"
+      >;</a
+      ><a name="610"
+      > </a
+      ><a name="611" class="Field Operator"
+      >_&#8852;&#8348;_</a
+      ><a name="615"
+      >      </a
+      ><a name="621" class="Symbol"
+      >=</a
+      ><a name="622"
+      > </a
+      ><a name="623" href="Data.Nat.Base.html#2713" class="Function Operator"
+      >_&#8852;_</a
+      ><a name="626"
+      >
+          </a
+      ><a name="637" class="Symbol"
+      >;</a
+      ><a name="638"
+      > </a
+      ><a name="639" class="Field"
+      >n&lt;s[n&#8852;m]&#8348;</a
+      ><a name="648"
+      > </a
+      ><a name="649" class="Symbol"
+      >=</a
+      ><a name="650"
+      > </a
+      ><a name="651" href="Prelude.html#4434" class="Function"
+      >n&lt;s[n&#8852;m]</a
+      ><a name="659"
+      >
+          </a
+      ><a name="670" class="Symbol"
+      >}</a
+      ><a name="671"
+      >
+
+
+</a
+      ><a name="674" class="Comment"
+      >-- Messages.</a
+      ><a name="686"
+      >
+
+</a
+      ><a name="688" class="Keyword"
+      >data</a
+      ><a name="692"
+      > </a
+      ><a name="693" href="BasicConcreteImplementations.html#693" class="Datatype"
+      >BasicMsg</a
+      ><a name="701"
+      > </a
+      ><a name="702" class="Symbol"
+      >:</a
+      ><a name="703"
+      > </a
+      ><a name="704" class="Symbol"
+      >(</a
+      ><a name="705" href="BasicConcreteImplementations.html#705" class="Bound"
+      >P&#7522;</a
+      ><a name="707"
+      > </a
+      ><a name="708" href="BasicConcreteImplementations.html#708" class="Bound"
+      >P&#11388;</a
+      ><a name="710"
+      > </a
+      ><a name="711" class="Symbol"
+      >:</a
+      ><a name="712"
+      > </a
+      ><a name="713" href="AbstractInterfaces.html#127" class="Field"
+      >Proc</a
+      ><a name="717" class="Symbol"
+      >)</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >(</a
+      ><a name="720" href="BasicConcreteImplementations.html#720" class="Bound"
+      >T&#8344;</a
+      ><a name="722"
+      > </a
+      ><a name="723" class="Symbol"
+      >:</a
+      ><a name="724"
+      > </a
+      ><a name="725" href="AbstractInterfaces.html#461" class="Field"
+      >Time</a
+      ><a name="729" class="Symbol"
+      >)</a
+      ><a name="730"
+      > </a
+      ><a name="731" class="Symbol"
+      >&#8594;</a
+      ><a name="732"
+      > </a
+      ><a name="733" class="PrimitiveType"
+      >Set</a
+      ><a name="736"
+      > </a
+      ><a name="737" class="Keyword"
+      >where</a
+      ><a name="742"
+      >
+
+</a
+      ><a name="744" class="Keyword"
+      >instance</a
+      ><a name="752"
+      >
+  </a
+      ><a name="755" href="BasicConcreteImplementations.html#755" class="Function"
+      >&#10216;M&#10217;</a
+      ><a name="758"
+      > </a
+      ><a name="759" class="Symbol"
+      >:</a
+      ><a name="760"
+      > </a
+      ><a name="761" href="AbstractInterfaces.html#866" class="Record"
+      >IsMsg</a
+      ><a name="766"
+      >
+  </a
+      ><a name="769" href="BasicConcreteImplementations.html#755" class="Function"
+      >&#10216;M&#10217;</a
+      ><a name="772"
+      > </a
+      ><a name="773" class="Symbol"
+      >=</a
+      ><a name="774"
+      > </a
+      ><a name="775" class="Keyword"
+      >record</a
+      ><a name="781"
+      >
+          </a
+      ><a name="792" class="Symbol"
+      >{</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Field"
+      >Msg</a
+      ><a name="797"
+      > </a
+      ><a name="798" class="Symbol"
+      >=</a
+      ><a name="799"
+      > </a
+      ><a name="800" href="BasicConcreteImplementations.html#693" class="Datatype"
+      >BasicMsg</a
+      ><a name="808"
+      >
+          </a
+      ><a name="819" class="Symbol"
+      >}</a
+      ><a name="820"
+      >
+
+
+</a
+      ><a name="823" class="Comment"
+      >-- Events within one process.</a
+      ><a name="852"
+      >
+
+</a
+      ><a name="854" class="Keyword"
+      >data</a
+      ><a name="858"
+      > </a
+      ><a name="859" href="BasicConcreteImplementations.html#859" class="Datatype"
+      >BasicEvent</a
+      ><a name="869"
+      > </a
+      ><a name="870" class="Symbol"
+      >:</a
+      ><a name="871"
+      > </a
+      ><a name="872" href="AbstractInterfaces.html#127" class="Field"
+      >Proc</a
+      ><a name="876"
+      > </a
+      ><a name="877" class="Symbol"
+      >&#8594;</a
+      ><a name="878"
+      > </a
+      ><a name="879" href="AbstractInterfaces.html#461" class="Field"
+      >Time</a
+      ><a name="883"
+      > </a
+      ><a name="884" class="Symbol"
+      >&#8594;</a
+      ><a name="885"
+      > </a
+      ><a name="886" class="PrimitiveType"
+      >Set</a
+      ><a name="889"
+      > </a
+      ><a name="890" class="Keyword"
+      >where</a
+      ><a name="895"
+      >
+  </a
+      ><a name="898" href="BasicConcreteImplementations.html#898" class="InductiveConstructor"
+      >send</a
+      ><a name="902"
+      > </a
+      ><a name="903" class="Symbol"
+      >:</a
+      ><a name="904"
+      > </a
+      ><a name="905" class="Symbol"
+      >&#8704;</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >{</a
+      ><a name="908" href="BasicConcreteImplementations.html#908" class="Bound"
+      >C&#7522;</a
+      ><a name="910"
+      > </a
+      ><a name="911" href="BasicConcreteImplementations.html#911" class="Bound"
+      >P&#7522;</a
+      ><a name="913"
+      > </a
+      ><a name="914" href="BasicConcreteImplementations.html#914" class="Bound"
+      >P&#11388;</a
+      ><a name="916"
+      > </a
+      ><a name="917" href="BasicConcreteImplementations.html#917" class="Bound"
+      >T&#8344;</a
+      ><a name="919" class="Symbol"
+      >}</a
+      ><a name="920"
+      > </a
+      ><a name="921" class="Symbol"
+      >{{</a
+      ><a name="923" href="BasicConcreteImplementations.html#923" class="Bound"
+      >_</a
+      ><a name="924"
+      > </a
+      ><a name="925" class="Symbol"
+      >:</a
+      ><a name="926"
+      > </a
+      ><a name="927" href="BasicConcreteImplementations.html#917" class="Bound"
+      >T&#8344;</a
+      ><a name="929"
+      > </a
+      ><a name="930" href="Agda.Builtin.Equality.html#55" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="931"
+      > </a
+      ><a name="932" href="AbstractInterfaces.html#661" class="Field"
+      >suc&#8348;</a
+      ><a name="936"
+      > </a
+      ><a name="937" href="BasicConcreteImplementations.html#908" class="Bound"
+      >C&#7522;</a
+      ><a name="939" class="Symbol"
+      >}}</a
+      ><a name="941"
+      > </a
+      ><a name="942" class="Symbol"
+      >&#8594;</a
+      ><a name="943"
+      >
+         </a
+      ><a name="953" href="AbstractInterfaces.html#927" class="Field"
+      >Msg</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="BasicConcreteImplementations.html#911" class="Bound"
+      >P&#7522;</a
+      ><a name="959"
+      > </a
+      ><a name="960" href="BasicConcreteImplementations.html#914" class="Bound"
+      >P&#11388;</a
+      ><a name="962"
+      > </a
+      ><a name="963" href="BasicConcreteImplementations.html#917" class="Bound"
+      >T&#8344;</a
+      ><a name="965"
+      > </a
+      ><a name="966" class="Symbol"
+      >&#8594;</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="BasicConcreteImplementations.html#859" class="Datatype"
+      >BasicEvent</a
+      ><a name="978"
+      > </a
+      ><a name="979" href="BasicConcreteImplementations.html#911" class="Bound"
+      >P&#7522;</a
+      ><a name="981"
+      > </a
+      ><a name="982" href="BasicConcreteImplementations.html#917" class="Bound"
+      >T&#8344;</a
+      ><a name="984"
+      >
+
+  </a
+      ><a name="988" href="BasicConcreteImplementations.html#988" class="InductiveConstructor"
+      >recv</a
+      ><a name="992"
+      > </a
+      ><a name="993" class="Symbol"
+      >:</a
+      ><a name="994"
+      > </a
+      ><a name="995" class="Symbol"
+      >&#8704;</a
+      ><a name="996"
+      > </a
+      ><a name="997" class="Symbol"
+      >{</a
+      ><a name="998" href="BasicConcreteImplementations.html#998" class="Bound"
+      >C&#11388;</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" href="BasicConcreteImplementations.html#1001" class="Bound"
+      >P&#7522;</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" href="BasicConcreteImplementations.html#1004" class="Bound"
+      >P&#11388;</a
+      ><a name="1006"
+      > </a
+      ><a name="1007" href="BasicConcreteImplementations.html#1007" class="Bound"
+      >T&#8344;</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="BasicConcreteImplementations.html#1010" class="Bound"
+      >T&#11388;</a
+      ><a name="1012" class="Symbol"
+      >}</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" class="Symbol"
+      >{{</a
+      ><a name="1016" href="BasicConcreteImplementations.html#1016" class="Bound"
+      >_</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" class="Symbol"
+      >:</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" href="BasicConcreteImplementations.html#1010" class="Bound"
+      >T&#11388;</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" href="Agda.Builtin.Equality.html#55" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" href="AbstractInterfaces.html#661" class="Field"
+      >suc&#8348;</a
+      ><a name="1029"
+      > </a
+      ><a name="1030" class="Symbol"
+      >(</a
+      ><a name="1031" href="BasicConcreteImplementations.html#1007" class="Bound"
+      >T&#8344;</a
+      ><a name="1033"
+      > </a
+      ><a name="1034" href="AbstractInterfaces.html#689" class="Field Operator"
+      >&#8852;&#8348;</a
+      ><a name="1036"
+      > </a
+      ><a name="1037" href="BasicConcreteImplementations.html#998" class="Bound"
+      >C&#11388;</a
+      ><a name="1039" class="Symbol"
+      >)}}</a
+      ><a name="1042"
+      > </a
+      ><a name="1043" class="Symbol"
+      >&#8594;</a
+      ><a name="1044"
+      >
+         </a
+      ><a name="1054" href="AbstractInterfaces.html#927" class="Field"
+      >Msg</a
+      ><a name="1057"
+      > </a
+      ><a name="1058" href="BasicConcreteImplementations.html#1001" class="Bound"
+      >P&#7522;</a
+      ><a name="1060"
+      > </a
+      ><a name="1061" href="BasicConcreteImplementations.html#1004" class="Bound"
+      >P&#11388;</a
+      ><a name="1063"
+      > </a
+      ><a name="1064" href="BasicConcreteImplementations.html#1007" class="Bound"
+      >T&#8344;</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" class="Symbol"
+      >&#8594;</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" href="BasicConcreteImplementations.html#859" class="Datatype"
+      >BasicEvent</a
+      ><a name="1079"
+      > </a
+      ><a name="1080" href="BasicConcreteImplementations.html#1004" class="Bound"
+      >P&#11388;</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="BasicConcreteImplementations.html#1010" class="Bound"
+      >T&#11388;</a
+      ><a name="1085"
+      >
+
+</a
+      ><a name="1087" class="Keyword"
+      >instance</a
+      ><a name="1095"
+      >
+  </a
+      ><a name="1098" href="BasicConcreteImplementations.html#1098" class="Function"
+      >&#10216;E&#10217;</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" class="Symbol"
+      >:</a
+      ><a name="1103"
+      > </a
+      ><a name="1104" href="AbstractInterfaces.html#1031" class="Record"
+      >IsEvent</a
+      ><a name="1111"
+      >
+  </a
+      ><a name="1114" href="BasicConcreteImplementations.html#1098" class="Function"
+      >&#10216;E&#10217;</a
+      ><a name="1117"
+      > </a
+      ><a name="1118" class="Symbol"
+      >=</a
+      ><a name="1119"
+      > </a
+      ><a name="1120" class="Keyword"
+      >record</a
+      ><a name="1126"
+      >
+          </a
+      ><a name="1137" class="Symbol"
+      >{</a
+      ><a name="1138"
+      > </a
+      ><a name="1139" class="Field"
+      >Event</a
+      ><a name="1144"
+      >  </a
+      ><a name="1146" class="Symbol"
+      >=</a
+      ><a name="1147"
+      > </a
+      ><a name="1148" href="BasicConcreteImplementations.html#859" class="Datatype"
+      >BasicEvent</a
+      ><a name="1158"
+      >
+          </a
+      ><a name="1169" class="Symbol"
+      >;</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" class="Field"
+      >isSend</a
+      ><a name="1177"
+      > </a
+      ><a name="1178" class="Symbol"
+      >=</a
+      ><a name="1179"
+      > </a
+      ><a name="1180" class="Symbol"
+      >&#955;</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" class="Symbol"
+      >{</a
+      ><a name="1183" href="BasicConcreteImplementations.html#1183" class="Bound"
+      >C&#7522;</a
+      ><a name="1185" class="Symbol"
+      >}</a
+      ><a name="1186"
+      > </a
+      ><a name="1187" href="BasicConcreteImplementations.html#1187" class="Bound"
+      >m</a
+      ><a name="1188"
+      > </a
+      ><a name="1189" href="BasicConcreteImplementations.html#1189" class="Bound"
+      >a</a
+      ><a name="1190"
+      > </a
+      ><a name="1191" class="Symbol"
+      >&#8594;</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" href="BasicConcreteImplementations.html#1189" class="Bound"
+      >a</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="Agda.Builtin.Equality.html#55" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" href="BasicConcreteImplementations.html#898" class="InductiveConstructor"
+      >send</a
+      ><a name="1201"
+      > </a
+      ><a name="1202" class="Symbol"
+      >{</a
+      ><a name="1203" href="BasicConcreteImplementations.html#1183" class="Bound"
+      >C&#7522;</a
+      ><a name="1205" class="Symbol"
+      >}</a
+      ><a name="1206"
+      > </a
+      ><a name="1207" href="BasicConcreteImplementations.html#1187" class="Bound"
+      >m</a
+      ><a name="1208"
+      >
+          </a
+      ><a name="1219" class="Symbol"
+      >;</a
+      ><a name="1220"
+      > </a
+      ><a name="1221" class="Field"
+      >isRecv</a
+      ><a name="1227"
+      > </a
+      ><a name="1228" class="Symbol"
+      >=</a
+      ><a name="1229"
+      > </a
+      ><a name="1230" class="Symbol"
+      >&#955;</a
+      ><a name="1231"
+      > </a
+      ><a name="1232" class="Symbol"
+      >{</a
+      ><a name="1233" href="BasicConcreteImplementations.html#1233" class="Bound"
+      >C&#11388;</a
+      ><a name="1235" class="Symbol"
+      >}</a
+      ><a name="1236"
+      > </a
+      ><a name="1237" href="BasicConcreteImplementations.html#1237" class="Bound"
+      >m</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" href="BasicConcreteImplementations.html#1239" class="Bound"
+      >a</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" class="Symbol"
+      >&#8594;</a
+      ><a name="1242"
+      > </a
+      ><a name="1243" href="BasicConcreteImplementations.html#1239" class="Bound"
+      >a</a
+      ><a name="1244"
+      > </a
+      ><a name="1245" href="Agda.Builtin.Equality.html#55" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1246"
+      > </a
+      ><a name="1247" href="BasicConcreteImplementations.html#988" class="InductiveConstructor"
+      >recv</a
+      ><a name="1251"
+      > </a
+      ><a name="1252" class="Symbol"
+      >{</a
+      ><a name="1253" href="BasicConcreteImplementations.html#1233" class="Bound"
+      >C&#11388;</a
+      ><a name="1255" class="Symbol"
+      >}</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" href="BasicConcreteImplementations.html#1237" class="Bound"
+      >m</a
+      ><a name="1258"
+      >
+          </a
+      ><a name="1269" class="Symbol"
+      >;</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" class="Field"
+      >absurd</a
+      ><a name="1277"
+      > </a
+      ><a name="1278" class="Symbol"
+      >=</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" class="Symbol"
+      >&#955;</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" class="Symbol"
+      >{</a
+      ><a name="1283"
+      > </a
+      ><a name="1284" class="Symbol"
+      >{{</a
+      ><a name="1286" href="Agda.Builtin.Equality.html#112" class="InductiveConstructor"
+      >refl</a
+      ><a name="1290" class="Symbol"
+      >}}</a
+      ><a name="1292"
+      > </a
+      ><a name="1293" class="Symbol"
+      >(</a
+      ><a name="1294" href="Agda.Builtin.Equality.html#112" class="InductiveConstructor"
+      >refl</a
+      ><a name="1298"
+      > </a
+      ><a name="1299" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" class="Symbol"
+      >())</a
+      ><a name="1304"
+      > </a
+      ><a name="1305" class="Symbol"
+      >}</a
+      ><a name="1306"
+      >
+          </a
+      ><a name="1317" class="Symbol"
+      >}</a
+      ><a name="1318"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>
